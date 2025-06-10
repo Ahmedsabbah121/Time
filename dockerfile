@@ -25,4 +25,7 @@ RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
 
 # Expose port
-EXPOSE 80
+EXPOSE 10000
+
+# Start Laravel
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=10000"]
